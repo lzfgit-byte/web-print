@@ -1,0 +1,57 @@
+@import "./values";
+div{
+  box-sizing: border-box;
+}
+.print-view-container{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  padding-top: @viewer-padding;
+  padding-left: @viewer-padding;
+  overflow: auto;
+}
+.page-container{
+  display: flex;
+  background-color: @page-back-color;
+  padding-top: 10px;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  overflow:auto;
+}
+.viewer-container{
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  position: relative;
+  display: inline-block;
+}
+.ruler-top{
+  position: absolute;
+  left: @viewer-padding;
+  top: 0;
+  z-index: 10;
+  background-color: white;
+}
+.ruler-left{
+  position: absolute;
+  background-color: white;
+  transform: rotate(-90deg);
+  z-index: 10;
+}
+//拖拽的元素
+.viewer-element{
+  position: absolute;
+  cursor: move;
+  border: 1px dotted @element-border-color;
+  padding: 5px 10px;
+  user-select: none;
+}
+.viewer-element-focus{
+  background-color: @element-focus-color;
+}
+.viewer-alignment-line{
+  border-bottom: 1px dotted @element-border-color;
+  border-left: 1px dotted @element-border-color;
+  position: absolute;
+}
